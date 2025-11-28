@@ -39,6 +39,9 @@ test-verbose: $(SETUP_STAMP) ## Run tests with verbose output
 
 # --- Utility Targets ---
 
+cpmanifest: $(SETUP_STAMP) ## next make filesdump )will contain what manifest says
+	cp manifest.lst tmp/filesdump.lst
+
 # Note: Requires 'tools/concat_files.py' to be present
 filesdump: $(SETUP_STAMP) gentree ## Create context dump for LLMs (requires manifest.lst)
 	@if [ -f manifest.lst ]; then \

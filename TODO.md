@@ -1,9 +1,12 @@
 # TODO
 
+## Learning Goals
+- [ ] Learn how to read and diagnose Python tracebacks/error output.
+
 ## Setup
-- [ ] Verify `make setup` runs correctly.
-- [ ] Copy `tools/concat_files.py` from external source.
-- [ ] Create `src/` directory structure.
+- [x] Verify `make setup` runs correctly.
+- [x] Copy `tools/concat_files.py` from external source.
+- [x] Create `src/` directory structure.
 
 ## Development
 - [ ] **Poe Transformer:** Create `tests/test_poe_transformer.py` with the user provided examples.

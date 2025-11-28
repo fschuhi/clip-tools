@@ -18,7 +18,7 @@ Streamline the workflow of moving text between applications (e.g., LLMs to Obsid
 
 The system follows a **Dispatcher Pattern**. A single entry point receives a command, reads the system clipboard, transforms the content, and writes it back.
 
-'''mermaid
+```mermaid
 graph LR
     User[User Shortcut] -->|Triggers| A[macOS Automator]
     A -->|Executes| P[Python Script]
@@ -27,7 +27,7 @@ graph LR
     L -->|Returns| P
     P -->|Writes| C
     C -->|Paste| User
-'''
+```
 
 | Component | Role |
 |---|---|
@@ -52,9 +52,9 @@ This project uses a curated "manifest" approach to manage context for AI collabo
 - macOS (for Automator integration)
 
 ### Installation
-'''bash
+```bash
 make setup
-'''
+```
 
 ---
 
@@ -62,22 +62,22 @@ make setup
 
 Currently, the tools can be run via CLI or tests.
 
-'''bash
+```bash
 # Run tests
 make test
 
 # Future: Run manually (Draft)
 python src/main.py --mode poe
-'''
+```
 
 ## Makefile Targets
 
-'''bash
+```bash
 make setup          # Install dependencies and project
 make test           # Run all tests
 make clean          # Remove venv and cache
 make filesdump      # Create context dump for LLMs
-'''
+```
 
 ---
 

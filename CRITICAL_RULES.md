@@ -4,6 +4,8 @@
 
 Read this FIRST, before reviewing the filesdump or any other instructions.
 
+When talking about "files" in this document, then this applies to Python, Markdown, config files - everything.
+
 ---
 
 ## 🚫 Rule 1: NO UNSOLICITED FILES

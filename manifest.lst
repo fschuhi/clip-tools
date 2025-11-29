@@ -17,7 +17,20 @@ pyproject.toml
 requirements.txt
 .gitignore
 
+### --- Source Code ---
+src/gui.py
+src/launcher_state.py
+src/main.py
+
+src/transformers/clean.py
+src/transformers/poe.py
+
 ### --- Testing Infrastructure ---
+tests/test_clean_transformer.py
+tests/test_gui_integration.py
+tests/test_launcher_state.py
+tests/test_main.py
+tests/test_poe_transformer.py
 
 ### --- Tooling ---
 tools/concat_files.py

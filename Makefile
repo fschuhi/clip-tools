@@ -10,7 +10,7 @@ RUN_WITH_PATH = $(ACTIVATE) && PYTHONPATH=.
 SETUP_STAMP = $(VENV_DIR)/.setup_stamp
 
 # --- Phony targets ---
-.PHONY: all setup test test-verbose clean showtree gentree filesdump help
+.PHONY: all setup test test-verbose clean showtree gentree filesdump help makepoe
 
 # Default target runs 'setup'
 all: setup
@@ -39,8 +39,8 @@ test-verbose: $(SETUP_STAMP) ## Run tests with verbose output
 
 # --- Utility Targets ---
 
-cpmanifest: $(SETUP_STAMP) ## next make filesdump )will contain what manifest says
-	cp manifest.lst tmp/filesdump.lst
+makepoe: $(SETUP_STAMP) ## Run the Poe transformer manually
+	$(RUN_WITH_PATH) python -m src.main poe
 
 # Note: Requires 'tools/concat_files.py' to be present
 filesdump: $(SETUP_STAMP) gentree ## Create context dump for LLMs (requires manifest.lst)

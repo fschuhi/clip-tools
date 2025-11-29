@@ -3,12 +3,17 @@
 ## Learning Goals
 - [ ] Learn how to read and diagnose Python tracebacks/error output.
 
-## Setup
-- [x] Verify `make setup` runs correctly.
-- [x] Copy `tools/concat_files.py` from external source.
-- [x] Create `src/` directory structure.
+## Backlog / Refactoring
+- [ ] **Transformer (Clean):** Investigate edge cases where copying text from Markdown code blocks inserts extra `LF`, causing the regex to interpret lines as paragraphs. Refactor `clean_whitespace` to handle these "double-spaced" inputs.
+- [ ] **Deployment:** Set up macOS Automator Quick Action (or Keyboard Maestro) to trigger `python -m src.main`.
 
 ## Development
-- [ ] **Poe Transformer:** Create `tests/test_poe_transformer.py` with the user provided examples.
-- [ ] **Poe Transformer:** Implement logic in `src/transformers/poe.py`.
-- [ ] **Infrastructure:** Create `src/main.py` dispatcher to select which tool to run.
+- [ ] **Python Error Formatter:** Implement a transformer to wrap clipboard content (tracebacks) in Markdown code blocks.
+
+## Completed
+- [x] **Project Setup:** Infrastructure, Makefile, venv.
+- [x] **Poe Transformer:** Logic and Tests.
+- [x] **Architecture:** Implemented Dispatcher (`src/main.py`).
+- [x] **GUI:** Implemented MVC-based Tkinter Launcher with searchable Listbox.
+- [x] **GUI:** Added Arrow Key navigation.
+- [x] **Transformer (Clean):** Initial implementation of `clean_whitespace`.

@@ -34,3 +34,6 @@ tests/test_poe_transformer.py
 
 ### --- Tooling ---
 tools/concat_files.py
+
+### --- Operations ---
+run_launcher.sh

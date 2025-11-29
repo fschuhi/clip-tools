@@ -12,8 +12,6 @@ Streamline the workflow of moving text between applications (e.g., LLMs to Obsid
 - **Frictionless:** Zero-click workflows. Trigger with a global hotkey, select a tool, and paste.
 - **Standardized:** Enforce consistent formatting rules (e.g., specific quoting styles for LLM chats) across all workflows.
 
-_Current scope: Transformations for Poe.com chats and whitespace cleaning for PDF/CLI text._
-
 ---
 
 ## Architecture Overview
@@ -39,10 +37,12 @@ graph LR
     C -->|Paste| User
 ```
 
-| Component | Role |
-|---|---|
-| **`src/main.py`** | **The Dispatcher.** The single entry point. Launches the GUI if called without arguments, or runs a specific transformer if passed a mode flag (e.g., `poe`). |
-| **`src/gui.py`** | **The View.** A frameless, keyboard-centric Tkinter window. Uses a native `Listbox` for performance and standard scrolling behavior. |
+### Core Components
+
+| File | Purpose |
+|------|---------|
+| **`src/main.py`** | **The Dispatcher.** Handles CLI args or launches the GUI. Routes commands to the correct transformer. |
+| **`src/gui.py`** | **The View.** A minimal Tkinter window. Handles rendering and keyboard events. |
 | **`src/launcher_state.py`** | **The Controller/Model.** Manages search filtering, selection state, and "Safe Start" logic (preventing accidental execution). |
 | **`src/transformers/`** | **Business Logic.** Pure functions that accept a string and return a transformed string. Decoupled from the UI. |
 
@@ -122,11 +122,26 @@ python -m src.main
 * **Enter** to run the selected tool on your clipboard content.
 * **Escape** to close without action.
 
-### 2. CLI Mode (Scripting/Keyboard Maestro)
+### 2. CLI Mode (Scripting/Automation)
 Run a specific tool directly without the GUI. Useful for binding specific tools to specific hotkeys.
 ```bash
 python -m src.main poe
 ```
+
+### 3. Global Hotkey (Automator Integration)
+
+To trigger the launcher from anywhere with a keyboard shortcut:
+
+1. **Open Automator** → New → Quick Action
+2. Set "Workflow receives" to `no input` in `any application`
+3. Add "Run Shell Script" action containing:
+   ```bash
+   /path/to/clip-tools/run_launcher.sh
+   ```
+4. Save as "Clip Tools Launcher"
+5. **System Settings** → Keyboard → Keyboard Shortcuts → Services → Assign your preferred shortcut
+
+The `run_launcher.sh` script is self-locating (no hardcoded paths required).
 
 ---
 
@@ -137,8 +152,8 @@ python -m src.main poe
 | **Project Scaffolding** | ✅ | Makefile, venv, TDD setup |
 | **Poe Transformer** | ✅ | Stable, fully tested |
 | **GUI Launcher** | ✅ | Searchable Listbox, Arrow Nav, MVC Architecture |
+| **Automator Integration** | ✅ | Global hotkey via Quick Action |
 | **Smart Unwrapper** | ⚠️ | Beta. Regex needs refinement for code-block edge cases. |
-| **Automator Integration** | ⏳ | Pending implementation |
-| **Error Formatter** | ⏳ | Planned (See TODO) |
+| **Error Formatter** | ⏳ | Planned (See Goals.md) |
 
 > **Note:** For future plans and edge-case tracking, please refer to [`Goals.md`](Goals.md) and [`TODO.md`](TODO.md).

@@ -1,13 +1,13 @@
 # TODO
 
-## Learning Goals
+Tactical scratchpad for quick fixes, small refactors, and tasks under ~1 hour. For strategic work with intent/rationale/definition of done, see [`Goals.md`](Goals.md).
 
-- Learn how to read and diagnose Python tracebacks/error output.
+---
 
-## Backlog / Refactoring
+## Educational
 
-- **Transformer (Clean):** Investigate edge cases where copying text from Markdown code blocks inserts extra `LF`, causing the regex to interpret lines as paragraphs.
+- **Grok Errors** - Learn how to read and diagnose Python tracebacks/error output.
 
-## Development
+## Transformers
 
-- **Python Error Formatter:** Implement a transformer to wrap clipboard content (tracebacks) in Markdown code blocks.
+- **Paragraph Boundaries** - Investigate edge cases in `clean.py` where copying text from Markdown code blocks inserts extra `LF`, causing the regex to interpret lines as paragraphs. Refactor to handle these "double-spaced" inputs.

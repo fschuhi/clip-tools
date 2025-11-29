@@ -13,7 +13,7 @@ What are ways to use statemachines?
 Assistant:
 Yes, there are several well-established hierarchical state machine libraries for Python:"""
 
-    expected_output = """> [!note]
+    expected_output = """> [!note] User:
 > Are there tried and tested hierarchical statemachines for my Python code?
 >
 > What are ways to use statemachines?
@@ -33,7 +33,7 @@ Are there tried and tested hierarchical statemachines for my Python code?
 Assistant:
 Yes, there are several well-established hierarchical state machine libraries for Python:"""
 
-    expected_output = """> [!note]
+    expected_output = """> [!note] User:
 > Are there tried and tested hierarchical statemachines for my Python code?
 
 Assistant:

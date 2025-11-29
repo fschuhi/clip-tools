@@ -12,7 +12,7 @@ def transform_poe_chat(text: str) -> str:
         # Check for User block start
         if stripped == "User:":
             in_user_block = True
-            output.append("> [!note]")
+            output.append("> [!note] User:")
             pending_empty_lines = 0
             continue
 

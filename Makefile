@@ -23,8 +23,8 @@ $(VENV_DIR)/bin/activate:
 $(SETUP_STAMP): $(VENV_DIR)/bin/activate requirements.txt pyproject.toml
 	@echo "--- Installing dependencies ---"
 	$(PIP) install -r requirements.txt
-	@echo "--- Installing project in editable mode ---"
-	$(PIP) install -e .
+	@echo "--- Installing project ---"
+	$(PIP) install .
 	@echo "--- Setup complete ---"
 	@touch $(SETUP_STAMP)
 

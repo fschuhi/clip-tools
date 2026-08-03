@@ -154,6 +154,6 @@ The `run_launcher.sh` script is self-locating (no hardcoded paths required).
 | **GUI Launcher** | ✅ | Searchable Listbox, Arrow Nav, MVC Architecture |
 | **Automator Integration** | ✅ | Global hotkey via Quick Action |
 | **Smart Unwrapper** | ⚠️ | Beta. Regex needs refinement for code-block edge cases. |
-| **Error Formatter** | ⏳ | Planned (See Goals.md) |
+| **Error Formatter** | ⏳ | Planned (See GOALS.md) |
 
-> **Note:** For future plans and edge-case tracking, please refer to [`Goals.md`](Goals.md) and [`TODO.md`](TODO.md).
+> **Note:** For future plans and edge-case tracking, please refer to [`GOALS.md`](GOALS.md) and [`TODO.md`](TODO.md).

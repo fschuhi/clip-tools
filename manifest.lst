@@ -4,10 +4,10 @@
 # ⚠️ NON-NEGOTIABLE collaboration rules - READ FIRST
 CRITICAL_RULES.md
 
-LLM-instructions.md
+.md
 README.md
 manifest.lst
-Goals.md
+GOALS.md
 TODO.md
 Makefile
 tmp/project-tree.txt

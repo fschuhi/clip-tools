@@ -30,9 +30,9 @@ The filesdump contains the complete project enclosed in `<document>` tags.
 **Key files to understand the project:**
 
 * **`manifest.lst`** - Start here: lists relevant files with explanations
-* **`LLM-instructions.md`** - Full collaboration guidelines (references CRITICAL_RULES.md)
+* **`.md`** - Full collaboration guidelines (references CRITICAL_RULES.md)
 * **`README.md`** - Bird's eye view of the project architecture
-* **`Goals.md`** - Strategic priorities for this conversation
+* **`GOALS.md`** - Strategic priorities for this conversation
 * **`REFACTORING.md`** - Detailed implementation guidance for top priorities (if present)
 * **`TODO.md`** - Scratchpad for ideas and quick wins
 * **`Makefile`** - Build, test, and run commands
@@ -45,14 +45,14 @@ The filesdump contains the complete project enclosed in `<document>` tags.
 
 **Step 2:** Review the filesdump structure via `manifest.lst`.
 
-**Step 3:** Check `Goals.md` for current priorities. The first goal listed is typically where I want to start.
+**Step 3:** Check `GOALS.md` for current priorities. The first goal listed is typically where I want to start.
 
 **Step 4:** Acknowledge that you understand:
 - The project's current state (from README.md)
-- The strategic direction (from Goals.md)  
+- The strategic direction (from GOALS.md)  
 - The collaboration rules (from CRITICAL_RULES.md)
 
-**Step 5:** Propose how to tackle the first goal from `Goals.md`. Remember:
+**Step 5:** Propose how to tackle the first goal from `GOALS.md`. Remember:
 - Discuss approach options first
 - Get explicit approval before creating files
 - Break work into digestible steps
@@ -79,7 +79,7 @@ I value:
 Please acknowledge that you've:
 1. ✅ Read CRITICAL_RULES.md
 2. ✅ Understood the project structure (manifest.lst)
-3. ✅ Reviewed current priorities (Goals.md)
+3. ✅ Reviewed current priorities (GOALS.md)
 4. ✅ Confirmed you'll follow the Discuss → Approve → Implement workflow
 
 Then let's discuss how to tackle the first goal!

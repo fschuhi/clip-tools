@@ -10,7 +10,7 @@ RUN_WITH_PATH = $(ACTIVATE) && PYTHONPATH=.
 SETUP_STAMP = $(VENV_DIR)/.setup_stamp
 
 # --- Phony targets ---
-.PHONY: all setup test test-verbose clean showtree gentree filesdump help makepoe
+.PHONY: all setup test test-verbose clean showtree gentree filesdump filesdump-detailed help makepoe
 
 # Default target runs 'setup'
 all: setup
@@ -45,10 +45,17 @@ makepoe: $(SETUP_STAMP) ## Run the Poe transformer manually
 cpmanifest: $(SETUP_STAMP) ## next make filesdump )will contain what manifest says
 	cp manifest.lst tmp/filesdump.lst
 
-# Note: Requires 'tools/concat_files.py' to be present
-filesdump: $(SETUP_STAMP) gentree ## Create context dump for LLMs (requires manifest.lst)
+filesdump: $(SETUP_STAMP) gentree ## Create context dump for LLMs
 	@if [ -f manifest.lst ]; then \
 		$(RUN_WITH_PATH) python tools/concat_files.py manifest.lst > tmp/filesdump.txt; \
+		echo "Generated tmp/filesdump.txt"; \
+	else \
+		echo "Error: manifest.lst not found"; \
+	fi
+
+filesdump-detailed: $(SETUP_STAMP) gentree ## Create context dump for LLMs
+	@if [ -f manifest.lst ]; then \
+		$(RUN_WITH_PATH) python tools/concat_files.py --detailed --sort manifest.lst > tmp/filesdump.txt; \
 		echo "Generated tmp/filesdump.txt"; \
 	else \
 		echo "Error: manifest.lst not found"; \
